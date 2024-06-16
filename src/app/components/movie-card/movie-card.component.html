@@ -1,0 +1,13 @@
+<div class="movie-card">
+	<div class="movie-card__picture-wrap">
+		<img [src]="data.backdrop_path" alt="{{ data.title }}" class="movie-card__image">
+	</div>
+	<div class="movie-card__details">
+		<h2 class="movie-card__title">{{ data.title }}</h2>
+		<p class="movie-card__description">{{ data.overview }}</p>
+		<p class="movie-card__rate">Рейтинг: {{ data.vote_average }}</p>
+		<button class="movie-card__button" (click)="addToFavorites()">Додати до улюблених</button>
+		<button class="movie-card__button movie-card__button--blue" (click)="addToWatchList()">Додати до списку
+			перегляду</button>
+	</div>
+</div>

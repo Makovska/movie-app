@@ -1,0 +1,70 @@
+.wrapper {
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 30px 15px;
+}
+[class*="__container"] {
+	
+}
+aside {
+	padding: 20px;
+}
+.main {
+
+	// .main__container
+
+	&__container {
+		
+	}
+
+	// .main__title
+
+	&__title {
+		font-weight: 900;
+		font-size: 48px;
+	}
+
+	// .main__movies-list
+
+	&__movies-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr;
+		gap: 40px 20px;
+	}
+
+	// .main__movie
+
+	&__movie {}
+}
+
+.favorites {
+
+	// .favorites__container
+
+	&__container {
+	}
+	
+	// .favorites__title
+	
+	&__title {
+		color: #8f4444;
+	}
+}
+
+.watch-list {
+
+	// .watch-list__container
+
+	&__container {
+	}
+	
+	// .watch-list__title
+	
+	&__title {
+		color: #44648f;
+	}
+}

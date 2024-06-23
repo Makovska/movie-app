@@ -3,30 +3,43 @@
 		<div class="main__container">
 			<h1 class="main__title">Movie-list:</h1>
 			<div class="main__movies-list">
-				<app-movie-card class="main__movie" [data]="movie[0]" (addFavorites)="handleAddFavorites($event)"
+				@if(movies.length>0){
+				@for(movie of movies; track movie.id) {
+				<app-movie-card class="main__movie" [data]="movie" (addFavorites)="handleAddFavorites($event)"
 					(addWatchList)="handleAddWatchList($event)">
 				</app-movie-card>
-				<app-movie-card class="main__movie" [data]="movie[1]" (addFavorites)="handleAddFavorites($event)"
-					(addWatchList)="handleAddWatchList($event)">
-				</app-movie-card>
-				<app-movie-card class="main__movie" [data]="movie[2]" (addFavorites)="handleAddFavorites($event)"
-					(addWatchList)="handleAddWatchList($event)">
-				</app-movie-card>
-				<app-movie-card class="main__movie" [data]="movie[3]" (addFavorites)="handleAddFavorites($event)"
-					(addWatchList)="handleAddWatchList($event)">
-				</app-movie-card>
+				}
+				}
 			</div>
 		</div>
 	</section>
 	<aside>
 		<section class="favorites">
 			<div class="favorites__container">
+				@if(favoritesList.length>0){
 				<h2 class="favorites__title">My Favorites:</h2>
+				<div class="favorites__cards">
+					@for(movie of favoritesList; track movie.id) {
+					<app-movie-card class="main__movie" [data]="movie" (addWatchList)="handleAddWatchList($event)"
+						(removeFavorites)="handleRemoveFavorites($event)">
+					</app-movie-card>
+					}
+				</div>
+				}
 			</div>
 		</section>
 		<section class="watch-list">
 			<div class="watch-list__container">
+				@if(watchList.length>0){
 				<h2 class="watch-list__title">My Watch List:</h2>
+				<div class="watch-list__cards">
+					@for(movie of watchList; track movie.id) {
+					<app-movie-card class="main__movie" [data]="movie" (addFavorites)="handleAddFavorites($event)"
+						(removeWatchList)="handleRemoveWatchList($event)">
+					</app-movie-card>
+					}
+				</div>
+				}
 			</div>
 		</section>
 	</aside>

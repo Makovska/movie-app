@@ -2,7 +2,7 @@
 	overflow: hidden;
 	display: grid;
 	grid-template-columns: 3fr 1fr;
-	max-width: 1140px;
+	max-width: 1440px;
 	margin: 0 auto;
 	padding: 30px 15px;
 }
@@ -31,9 +31,9 @@ aside {
 
 	&__movies-list {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: 1fr;
-		gap: 40px 20px;
+		grid-template-columns: repeat(5, 1fr);
+		grid-auto-rows: 1fr;
+		gap: 30px 20px;
 	}
 
 	// .main__movie
@@ -51,7 +51,13 @@ aside {
 	// .favorites__title
 	
 	&__title {
-		color: #8f4444;
+		color: #d10505;
+	}
+	&__cards {
+		display: grid;
+		gap: 20px 10px;
+		grid-template-columns: 1fr 1fr;
+		grid-auto-rows: 1fr;
 	}
 }
 
@@ -66,5 +72,12 @@ aside {
 	
 	&__title {
 		color: #44648f;
+	}
+
+	&__cards {
+	display: grid;
+	gap: 20px 10px;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: 1fr;
 	}
 }

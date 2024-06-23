@@ -1,13 +1,18 @@
 <div class="movie-card">
-	<div class="movie-card__picture-wrap">
-		<img [src]="data.backdrop_path" alt="{{ data.title }}" class="movie-card__image">
-	</div>
+	<img [src]="data.backdrop_path" alt="{{ data.title }}" class="movie-card__image">
 	<div class="movie-card__details">
 		<h2 class="movie-card__title">{{ data.title }}</h2>
-		<p class="movie-card__description">{{ data.overview }}</p>
+		<!-- <p class="movie-card__description">{{ data.overview }}</p> -->
+		<p class="movie-card__release-date">{{ data.release_date | getReleaseYear }}</p>
+		<p class="movie-card__genre">{{ data.genre_ids | getGenresSpaces }}</p>
 		<p class="movie-card__rate">Рейтинг: {{ data.vote_average }}</p>
-		<button class="movie-card__button" (click)="addToFavorites()">Додати до улюблених</button>
-		<button class="movie-card__button movie-card__button--blue" (click)="addToWatchList()">Додати до списку
-			перегляду</button>
+		<div class="movie-card__button-wrapper">
+			<button class="movie-card__button" (click)="addToFavorites()" title="Add to favorites"><img
+					src="../../../assets/img/like-7.svg" alt="Add to favorites"></button>
+			<button class="movie-card__button" (click)="addToWatchList()" title="Add to watch list"><img
+					src="../../../assets/img/look-at-it-later.svg" alt="Add to watch list"></button>
+			<a class="movie-card__button" href="#" title="More information"><img src="../../../assets/img/more-7668.svg"
+					alt="More information"></a>
+		</div>
 	</div>
 </div>
